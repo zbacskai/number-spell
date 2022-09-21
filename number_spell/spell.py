@@ -1,4 +1,4 @@
-from constants import ONES_MAP, TENS_AND_ONES_MAP, PERIOD_MAP
+from .constants import ONES_MAP, TENS_AND_ONES_MAP, PERIOD_MAP
 import re
 
 INPUT_REGEX = re.compile(r"^0$|^[1-9][0-9]{0,4}$|^10{5}$")
@@ -37,7 +37,7 @@ def _parse_periods(number_str: str) -> []:
     return [p for p in periods[::-1] if not p.is_zero()]
 
 
-def _translate_a_period(period: Period) -> str:
+def _translate_period_numbers(period: Period) -> str:
     word = []
     if period.hundreds != 0:
         word.append(f'{ONES_MAP[period.hundreds]} hundred')
@@ -48,10 +48,13 @@ def _translate_a_period(period: Period) -> str:
     return ' and '.join(word)
 
 
+def _translate_a_period(period: Period) -> str:
+    period_numbers = _translate_period_numbers(period=period)
+    return f'{period_numbers} {PERIOD_MAP[period.period_id]}' if period.period_id != 0 else f'{period_numbers}'
+
+
 def _translate_periods(periods: []) -> str:
-    numbers_translated = [(p, _translate_a_period(p),) for p in periods]
-    resolved_period_names = [f'{number_str} {PERIOD_MAP[p.period_id]}' for p, number_str in numbers_translated]
-    return ', '.join(resolved_period_names)
+    return ', '.join([_translate_a_period(p) for p in periods])
 
 
 def spell(number_str: str):
