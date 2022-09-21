@@ -9,4 +9,4 @@ TENS_AND_ONES_MAP = ONES_MAP + [
     'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen',
     'sixteen', 'seventeen', 'eighteen', 'nineteen'] + _TENS_AND_ONES_REGULAR_MAP
 
-PERIOD_MAP = ['', 'thousand', 'million']
+PERIOD_MAP = ['one', 'thousand', 'million']

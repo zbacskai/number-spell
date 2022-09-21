@@ -13,15 +13,12 @@ def _validate_input(input_str: str):
 
 class Period:
     def __init__(self, period_s: str, period_id: int):
-        self.hundreds = int(period_s[0]) if len(period_s) == 3 else 0
+        self.hundreds = int(period_s[-3]) if len(period_s) >= 3 else 0
         self.tens_and_ones = int(period_s[-2::])
         self.period_id = period_id
 
     def is_zero(self):
         return self.hundreds == 0 and self.tens_and_ones == 0
-
-    def __str__(self):
-        return f'{self.hundreds} {self.tens_and_ones} M:{self.period_id}'
 
 
 def ceil_div(a, b):
