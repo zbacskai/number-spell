@@ -1,4 +1,4 @@
-from .constants import ONES_MAP, TENS_AND_ONES_MAP, PERIOD_MAP
+from number_spell.constants import ONES_MAP, TENS_AND_ONES_MAP, PERIOD_MAP
 import re
 
 INPUT_REGEX = re.compile(r"^0$|^[1-9][0-9]{0,4}$|^10{5}$")
@@ -61,7 +61,3 @@ def spell(number_str: str):
     periods = _parse_periods(number_str=number_str)
     return _translate_periods(periods=periods)
 
-
-if __name__ == '__main__':
-    test_string = input('')
-    print(f'{spell(test_string)}')
