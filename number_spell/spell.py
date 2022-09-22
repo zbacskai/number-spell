@@ -54,8 +54,16 @@ def _translate_a_period(period: Period) -> str:
     return f'{period_numbers} {PERIOD_MAP[period.period_id]}' if period.period_id != 0 else f'{period_numbers}'
 
 
+def _get_period_separation_character(period: Period):
+    return ',' if period.hundreds != 0 and period.tens_and_ones != 0 else ' and'
+
+
 def _translate_periods(periods: []) -> str:
-    return ', '.join([_translate_a_period(p) for p in periods])
+    translated_per_s = _translate_a_period(periods[0])
+    for i in range(1, len(periods)):
+        translated_per_s += f'{_get_period_separation_character(periods[i])} {_translate_a_period(periods[i])}'
+
+    return translated_per_s
 
 
 def spell(number_str: str):

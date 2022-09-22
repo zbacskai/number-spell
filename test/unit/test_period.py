@@ -106,3 +106,12 @@ def test_translate_period_thousands():
 def test_translate_periods_representing_number():
     result = _translate_periods([Period(period_s='1', period_id=1), Period(period_s='983', period_id=0)])
     assert result == 'one thousand, nine hundred and eighty-three'
+
+
+def test_translate_periods_representing_number():
+    result = _translate_periods([Period(period_s='1', period_id=1), Period(period_s='001', period_id=0)])
+    assert result == 'one thousand and one'
+
+def test_translate_periods_empty_period_listr():
+    with pytest.raises(IndexError):
+        result = _translate_periods([])

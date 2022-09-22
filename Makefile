@@ -17,5 +17,8 @@ freeze: install-pip-tools
 
 test_integration:
 	pytest -sv test/integration
+
+test_unit:
+	pytest -sv test/unit
     
 .PHONY: test_integration install install-dev freeze install-pip-tools
