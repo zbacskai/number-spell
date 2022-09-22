@@ -1,4 +1,11 @@
 #!/usr/bin/env python
+"""
+
+ Wrapper around argumentparser.py This is mainly a workaround to set PYTHONPATH.
+
+ 2023 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
+
+"""
 from argumentparser import arg_parser
 from number_spell.spell import spell
 

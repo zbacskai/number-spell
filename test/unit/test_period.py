@@ -103,12 +103,12 @@ def test_translate_period_thousands():
     assert result == 'four hundred and eleven thousand'
 
 
-def test_translate_periods_representing_number():
+def test_translate_periods_representing_number_coma_separator():
     result = _translate_periods([Period(period_s='1', period_id=1), Period(period_s='983', period_id=0)])
     assert result == 'one thousand, nine hundred and eighty-three'
 
 
-def test_translate_periods_representing_number():
+def test_translate_periods_representing_number_and_separator():
     result = _translate_periods([Period(period_s='1', period_id=1), Period(period_s='001', period_id=0)])
     assert result == 'one thousand and one'
 

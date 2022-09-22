@@ -7,7 +7,8 @@ install_requires = []
 dev_requires = [
     "pytest",
     "pyinstaller",
-    "coverage"
+    "coverage",
+    "mypi"
 ]
 
 setup(

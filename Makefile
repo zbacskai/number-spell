@@ -20,5 +20,8 @@ test_integration:
 
 test_unit:
 	pytest -sv test/unit
+
+mypy:
+	mypy number_spell/ test/
     
-.PHONY: test_integration install install-dev freeze install-pip-tools
+.PHONY: test_integration install install-dev freeze install-pip-tools coverage mypy
