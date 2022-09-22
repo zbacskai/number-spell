@@ -6,9 +6,13 @@ INPUT_REGEX = re.compile(r"^0$|^[1-9][0-9]{0,4}$|^10{5}$")
 ZERO_DIGIT_S = '0'
 
 
+class InputValidationException(Exception):
+    pass
+
+
 def _validate_input(input_str: str):
     if not re.match(INPUT_REGEX, input_str):
-        raise Exception("Invalid format or range.")
+        raise InputValidationException("Invalid format or range.")
 
 
 class Period:
@@ -60,4 +64,3 @@ def spell(number_str: str):
         return ONES_MAP[0]
     periods = _parse_periods(number_str=number_str)
     return _translate_periods(periods=periods)
-
