@@ -1,7 +1,7 @@
 """
  The constants used to do the translation of digits to words in British English
 
- 2023 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
+ 2022 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
 """
 ONES_MAP = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine']
 

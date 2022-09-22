@@ -6,7 +6,7 @@
 
  Currently numbers in the range of 0..100000 supported. (0 and 100000 inclusive)
 
- 2023 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
+ 2022 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
 
 """
 import argparse

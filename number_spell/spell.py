@@ -2,7 +2,7 @@
 
  Main implementation of the translator and parsers
 
- 2023 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
+ 2022 September - Zoltan Bacskai - z.bacskai.jr@gmail.com
 
 """
 from number_spell.constants import ONES_MAP, TENS_AND_ONES_MAP, PERIOD_MAP
