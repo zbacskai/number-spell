@@ -1,6 +1,6 @@
 # number-spell
 
-This tool takes an integer from 0 to 100,000 and converts it into grammatically correct
+This tool takes an integer in the range of 0 to 100,000 and converts it into grammatically correct
 British English words. Some examples:
 
 ```
@@ -27,9 +27,10 @@ twelve thousand, three hundred and forty-five
 
 To run the tool you need to install `Python >= 3.9.10`.
 
-**NOTE:** The code has been tested running the above minimum Python version but it shall be able to run on lower Python versions/
+**NOTE:** The code has been tested running the above minimum Python version, but it shall be able to run on lower 
+ Python versions.
 
-# Run The code
+# Run The Code
 
 There is a wrapper script designed to be run on `Linux/Unix/MacOs` systems.
 
@@ -53,6 +54,8 @@ for development, but any other solution works.
 
 ## Install dependencies
 
+`Setuptools` is used to install dependencies. Execute the following command:
+
 `make install-dev`
 
 ## Run Tests
@@ -69,7 +72,7 @@ make test_unit
 
 The coverage data will be written to `coverage_html` directory. Open `index.html`
 
-## Creating distributable binaries
+## Creating Distributable Binaries
 
 Run
 
